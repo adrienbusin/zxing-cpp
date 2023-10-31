@@ -18,6 +18,7 @@ package com.example.zxingcppdemo
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.*
 import android.hardware.camera2.CaptureRequest
@@ -72,6 +73,11 @@ class MainActivity : AppCompatActivity() {
             doSaveImage = true
             // Re-enable camera controls
             it.isEnabled = true
+        }
+
+        binding.compose?.setOnClickListener {
+            it.isActivated = false
+            startActivity(Intent(this, ComposeActivity::class.java))
         }
     }
 

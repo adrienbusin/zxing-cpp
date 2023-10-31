@@ -73,6 +73,12 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/compose"
+            style="@style/ChipR"
+            android:enabled="true"
+            android:text="Compose" />
+
+        <com.google.android.material.chip.Chip
             android:id="@+id/java"
             style="@style/ChipR"
             android:text="Java" />

@@ -29,6 +29,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.7"
+    }
+
     lint {
         disable.add("UnsafeExperimentalUsageError")
     }
@@ -44,7 +52,19 @@ dependencies {
     implementation(libs.androidx.camera.lifecycle)
     implementation(libs.androidx.camera.view)
     implementation(libs.google.material)
+    implementation(libs.androidx.material3)
+
+    // Compose
+    implementation(libs.activity.compose)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.vitamin.chips)
+
+    // Compose Design sytem
+    implementation(libs.compose.vitamin.foundation)
 
     // Java "upstream" version of zxing (to compare performance)
     implementation(libs.google.zxing)
+
+
 }
