@@ -12,6 +12,7 @@ constraintLayout = "2.1.4"
 google-zxing = "3.5.0"
 kotlin = "1.9.10"
 materialDesign = "1.11.0-alpha02"
+publish = "0.25.3"
 
 [libraries]
 androidx-activityktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
@@ -29,4 +30,5 @@ google-zxing = { module = "com.google.zxing:core", version.ref = "google-zxing" 
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+com-vanniktech-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
 

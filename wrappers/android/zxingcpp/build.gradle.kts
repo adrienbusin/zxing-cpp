@@ -1,6 +1,9 @@
+import java.net.URI
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.com.vanniktech.maven.publish)
 }
 
 android {
@@ -41,6 +44,26 @@ android {
     }
     lint {
         disable.add("UnsafeExperimentalUsageError")
+    }
+}
+
+group = "com.zxingcpp.scan"
+version = properties["VERSION"]!!
+
+fun RepositoryHandler.mavenGar() {
+    val garToken = System.getenv("GAR_TOKEN") ?: ""
+    maven {
+        url = URI("https://europe-west1-maven.pkg.dev/instore-eqov/instore-android")
+        credentials {
+            username = "_json_key_base64"
+            password = garToken
+        }
+    }
+}
+
+publishing {
+    repositories {
+        mavenGar()
     }
 }
 
